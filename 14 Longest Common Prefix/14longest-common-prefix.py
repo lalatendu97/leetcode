@@ -9,6 +9,6 @@ class Solution:
 
             if len(res) == 1:
                 i += 1
-                continue
-            break
+            else:
+                break
         return strs[0][:i-1]
