@@ -5,18 +5,19 @@ class Solution:
         int_m = -2147483648
         rev = 0
         x *= sign
-        c = 0
+        c = len(str(x))
 
         while x:
-            c += 1
             digit = x % 10
             x = x //10
             rev = rev*10 + digit
         
+        rev *= sign
+        
         if c == 10:
-            if rev * sign >= int_M:
-                return 0 
-            elif rev * sign < int_m:
+            if rev + 1 > int_M:
                 return 0
-        return rev * sign
+            if rev < int_m:
+                return 0
+        return rev
             
