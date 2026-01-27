@@ -5,17 +5,19 @@
 #         self.next = next
 class Solution:
     def numComponents(self, head: Optional[ListNode], nums: List[int]) -> int:
-        lst = []
+        idx = [0 for _ in range(len(nums))]
+        i = 0
+
         while head.next:
-            lst.append(head.val)
+            if head.val in nums:
+                idx[nums.index(head.val)] = i
+            i += 1
             head = head.next
-        lst.append(head.val)
 
-        idx = []
-        for i in nums:
-            idx.append(lst.index(i))
+        if head.val in nums:
+            idx[nums.index(head.val)] = i
+
         idx.sort()
-
         res = len(idx)
         for i in range(1, res):
             if idx[i - 1] + 1 == idx[i]:
