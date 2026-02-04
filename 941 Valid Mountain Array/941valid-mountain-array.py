@@ -12,9 +12,6 @@ class Solution:
                     f2 = 1
                     continue
                 return False
-            else:
-                if s < 0:
-                    continue
-                else:
-                    return False
+            elif s >= 0:
+                return False
         return True if f1 == 1 and f2 == 1 else False
