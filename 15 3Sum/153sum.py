@@ -19,7 +19,6 @@ class Solution:
                 elif test > 0:
                     r -=1
                 else:
-                    # if [val, nums[l], nums[r]] not in res:
                     res.append([val, nums[l], nums[r]])
                     l += 1
                     r -= 1
