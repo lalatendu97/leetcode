@@ -14,10 +14,9 @@ class Solution:
             if heap:
                 e, c = heapq.heappop(heap)
                 if c > 1:
-                    c -= 1
                     res += 1
                     if e > i:
-                        heapq.heappush(heap, (e, c))
+                        heapq.heappush(heap, (e, c - 1))
                 elif c == 1:
                     res += 1
             i += 1
