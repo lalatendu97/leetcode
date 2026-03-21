@@ -7,7 +7,7 @@ class Solution:
         n = len(apples)
 
         while heap or i < n:
-            if i < n:
+            if i < n and apples[i] > 0:
                 heapq.heappush(heap, (i + days[i], apples[i]))
             while heap and heap[0][0] <= i:
                 heapq.heappop(heap)
@@ -23,5 +23,3 @@ class Solution:
             i += 1
 
         return res
-
-
