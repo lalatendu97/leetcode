@@ -1,6 +1,8 @@
 class Solution:
     def xorAfterQueries(self, nums: List[int], queries: List[List[int]]) -> int:
         c = 10**9 + 7
+        res = 0
+        
         for query in queries:
             idx = query[0]
 
